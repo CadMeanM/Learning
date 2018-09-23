@@ -5,6 +5,10 @@ import com.icbc.dmqs.Attrs.ReflectInterface;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
+/**
+ * 用于展示一个类的自定义方法和所有方法
+ */
+
 public class MethodsReflect implements ReflectInterface {
     public void test() {
         System.out.println("反射调用了MethodsReflect的test方法");//为一会TestReflect7的调用做准备
