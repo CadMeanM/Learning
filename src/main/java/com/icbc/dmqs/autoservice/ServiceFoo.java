@@ -1,4 +1,4 @@
-package com.icbc.dmqs.AutoService;
+package com.icbc.dmqs.autoservice;
 
 import com.google.auto.service.AutoService;
 

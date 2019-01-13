@@ -1,12 +1,18 @@
-package com.icbc.dmqs.Proxy;
+package com.icbc.dmqs.proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-//定义项目接口
+
+/**
+ * 定义项目接口
+ */
 interface Subject {
     public String say(String name, int age);
 }
-// 定义真实项目
+
+/**
+ * 定义真实项目
+ */
 class RealSubject implements Subject {
     String name;
     RealSubject(){
@@ -21,6 +27,10 @@ class RealSubject implements Subject {
         return n + "  " + age;
     }
 }
+
+/**
+ * @author: huangz
+ */
 class MyInvocationHandler implements InvocationHandler {
     private Object obj = null;
     private int tag = 0;

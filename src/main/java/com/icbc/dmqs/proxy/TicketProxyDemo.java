@@ -1,28 +1,40 @@
-package com.icbc.dmqs.Proxy;
+package com.icbc.dmqs.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * 接口类
+ */
 interface Seller{
+    /**
+     * 获取票价
+     * @return
+     */
     public Integer getPrice();
 }
-//真实卖家
+/**
+ * 真实卖家
+ */
 class RealSeller implements Seller{
 
     public Integer getPrice() {
         return 20;
     }
 }
-//黑心卖家
+/**
+ * 黑心卖家
+ */
 class FakeSeller implements Seller{
 
     public Integer getPrice() {
         return 40;
     }
 }
-
-//中间商赚差价
+/**
+ * 中间商
+ */
 class TicketProxy implements InvocationHandler {
 
     private Object obj = null;
@@ -43,8 +55,12 @@ class TicketProxy implements InvocationHandler {
         return i;
     }
 }
+
+/**
+ * @author: huangz
+ */
 public class TicketProxyDemo{
-    public static void main(String args[]){
+    public static void main(String[] args){
         TicketProxy tp = new TicketProxy();
         Seller seller = (Seller) tp.bind(new RealSeller());
         System.out.println("真实卖家："+new RealSeller().getPrice());

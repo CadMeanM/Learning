@@ -1,4 +1,4 @@
-package com.icbc.dmqs.Attrs;
+package com.icbc.dmqs.attrs;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -7,7 +7,7 @@ public class AttrReflect implements ReflectInterface {
     private static final long serialVersionUID = -286258502L;
     public int subAttr = 0;
     public static void main(String[] args) throws Exception {
-        Class<?> clazz = Class.forName("com.icbc.dmqs.Attrs.AttrReflect");
+        Class<?> clazz = Class.forName("com.icbc.dmqs.attrs.AttrReflect");
         System.out.println("===============本类属性===============");
         // 取得本类的全部属性
         Field[] field = clazz.getDeclaredFields();
